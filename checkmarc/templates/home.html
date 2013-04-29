@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+
+{% block title %}Upload a Marc file and Check it{% endblock %}
+
+{% block content %}
+
+    <form action="" method="POST" enctype="multipart/form-data" id="fileuploader">{%  csrf_token %}
+    <input type="file" class="input-file" name="filename" />
+    <input type="submit" value="Check MARC file" class="btn primary" />
+    </form>
+
+
+{% endblock %}

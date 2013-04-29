@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+
+{% block title %} Results for your test {% endblock %}
+
+{% block content %}
+
+    {% if results %}
+        {% for key,value in results.iteritems %}
+
+            {% if value|length > 1 %}
+                <p>
+                <h3>{{ value.title }}</h3>
+
+                <ol>
+                {%  for k,v in value.iteritems %}
+                    {% if k !=  'title' %}
+                        <span style="font-size: 16px;"><li style="color:black;">{{ k }} : {{ v }}</li></span>
+                    {% endif %}
+           {% endfor %}
+                </ol>
+                </p>
+            {%  endif %}
+        {% endfor %}
+    {% else %}
+        <h1>FOOBAR</h1>
+    {% endif %}
+{% endblock %}

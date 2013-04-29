@@ -1,0 +1,47 @@
+<!doctype html>
+<html>
+<head>
+    <title>{% block title %} {% endblock %}</title>
+    <link rel="stylesheet" href="http://twitter.github.com/bootstrap/1.4.0/bootstrap.min.css">
+    <style>
+        #content {padding-top:60px;}
+    </style>
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+</head>
+<body>
+
+<div class="container">
+    <div class="row">
+
+        <nav class="topbar">
+            <div class="fill">
+                <div class="container">
+                    <a class="brand" href="/">marc-check</a>
+                    <ul class="nav">
+                        <li {% ifequal request.path "/" %} class="active" {% endifequal %}><a href="/">Check a Marc file</a></li>
+                        <li {% ifequal request.path "/reports" %} class="active" {% endifequal %}><a rel="nofollow" href="/reports">Reports</a></li>
+
+                    </ul>
+
+                </div>
+            </div>
+        </nav>
+    </div>
+</div>
+<div class="container">
+    <div class="row">
+    <div id="content">
+            {% block content %}{% endblock %}
+        </div>
+
+        <footer id="footer">
+            <div class="container">
+            </div>
+        </footer>
+
+    </div>
+</div>
+
+
+</body>
+</html>
